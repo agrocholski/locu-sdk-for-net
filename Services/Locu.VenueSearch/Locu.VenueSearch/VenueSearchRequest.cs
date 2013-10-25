@@ -18,7 +18,7 @@ namespace Locu.VenueSearch
         public VenueSearchRequest(string apiKey)
         {
             if (string.IsNullOrEmpty(apiKey))
-                throw new ArgumentNullException("apiKey");
+                throw new ArgumentNullException("apiKey", "An API key must be provided.");
 
             this.ApiKey = apiKey;
             this.Categories = new List<VenueCategory>();
