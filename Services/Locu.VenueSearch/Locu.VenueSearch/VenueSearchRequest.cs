@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Locu.VenueSearch
 {
     /// <summary>
-    /// Representa a request the Locu Venue Search API.
+    /// Represents a request the Locu Venue Search API.
     /// </summary>
     public class VenueSearchRequest
     {
