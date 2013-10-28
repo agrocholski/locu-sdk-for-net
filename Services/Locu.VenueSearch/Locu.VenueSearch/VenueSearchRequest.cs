@@ -27,6 +27,7 @@ namespace Locu.VenueSearch
             this.Radius = null;
             this.Location = new VenueSearchLocation();
             this.Bounds = new VenueSearchBounds();
+            this.OpenAt = null;
         }
 
         /// <summary>
@@ -141,7 +142,15 @@ namespace Locu.VenueSearch
         /// </remarks>
         public VenueSearchBounds Bounds { get; set; }
 
-        //todo: openat
+        /// <summary>
+        /// Search for the venues open at the specified time.
+        /// </summary>
+        /// <remarks>
+        /// Maps to the open_at parameter. The date has to be
+        /// in ISO-8601 format (YYYY-MM-DDTHH:MM:SS) in the
+        /// business' local time zone.
+        /// </remarks>
+        public DateTime? OpenAt { get; set; }
 
         /// <summary>
         /// URI of the venue search request.
@@ -204,6 +213,9 @@ namespace Locu.VenueSearch
                     this.Bounds.Location2.Latitude.Value,
                     this.Bounds.Location2.Longitude.Value));
             }
+
+            if(this.OpenAt.HasValue)
+                uri.Append(string.Format("&open_at={0}", this.OpenAt.Value.ToString("yyyy-MM-ddTHH:mm:ss")));
 
             return uri.ToString();
         }
