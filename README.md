@@ -88,4 +88,4 @@ var client = new VenueDetailsClient();
 var response = await client.SendAsync(request);
 ```
 
-![Powered by Locu](/Images/Locu/poweredby-color.png)
+![Powered by Locu](/docs/images/Locu/poweredby-color.png)
