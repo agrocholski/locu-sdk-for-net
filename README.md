@@ -88,4 +88,22 @@ var client = new VenueDetailsClient();
 var response = await client.SendAsync(request);
 ```
 
+## Tools
+
+### Locu Venue Details Console
+
+The source code also contains the Locu Venue Details Console. This tool allows you to save the details of a known Locu venue to a local json file. The following parameters can be passed in to the tool:
+
+The call to the tool will look like this:
+
+- _apiKey_: Your Locu API key
+- _venueId_: The Locu Id of the venue you want save the details of
+- _filePath_: The path to the file where you want to save the venue details
+
+```bash
+VenueDetails apiKey venueId filePath
+```
+
+If you do not provide all three parameters, the tool will prompt you for them.
+
 ![Powered by Locu](/docs/images/Locu/poweredby-color.png)
