@@ -13,19 +13,19 @@ In order to use the Locu SDK for .NET, you will need a Locu API key. An API key 
 
 To get the source code of the Locu SDK for .NET via git just type:
 
-'''bash
+```bash
 git clone https://github.com/agrocholski/locu-sdk-for-net
 cd azure-sdk-for-net
-'''
+```
 
 ### Via NuGet
 
 To get the binaries associated with this project you can also have them installed by the .NET package manager [NuGet](http://www.nuget.org)
 
 #### Venue Search binaries
-'''bash
+```bash
 PM> Install-Package Locu.VenueSearch
-'''
+```
 
 ## Code Samples
 
@@ -33,24 +33,24 @@ PM> Install-Package Locu.VenueSearch
 
 First, include the classes you need.
 
-'''csharp
+```csharp
 using Locu.VenuSearch;
-'''
+```
 
 Next, define the parameters of your search. The following example shows how to search for venues with menus in Minneapolis, MN.
 
-'''csharp
+```csharp
 var parameters = new VenueSearchRequest(apiKey);
 parameters.Locality = "Minneapolis";
 parameters.Region = "MN";
 parameters.HasMenu = true;
-'''
+```
 
 Finally, create an instance of the VenueSearchClient class and call the SendAsync method with your parameters.
 
-'''csharp
+```csharp
 var search = new VenueSearchClient();
 var result = await search.SendAsync(parameters);
-'''
+```
 
 ![Powered by Locu](/Images/Locu/poweredby-color.png)
