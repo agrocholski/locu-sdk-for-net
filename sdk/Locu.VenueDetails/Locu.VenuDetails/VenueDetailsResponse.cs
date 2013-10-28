@@ -38,6 +38,16 @@ namespace Locu.VenueDetails
         /// </summary>
         [JsonIgnore]
         public string Json { get; set; }
+
+        /// <summary>
+        /// Creates an instance of the VenueDetailsResponse class from a string.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static VenueDetailsResponse CreateFromString(string source)
+        {
+            return JsonConvert.DeserializeObject<VenueDetailsResponse>(source);
+        }
     }
 
     /// <summary>
