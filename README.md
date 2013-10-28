@@ -37,20 +37,20 @@ First, include the classes you need.
 using Locu.VenuSearch;
 ```
 
-Next, define the parameters of your search. The following example shows how to search for venues with menus in Minneapolis, MN.
+Next, define the parameters of your search using a VenueSearchObject. The following example shows how to search for venues with menus in Minneapolis, MN.
 
 ```csharp
-var parameters = new VenueSearchRequest(apiKey);
-parameters.Locality = "Minneapolis";
-parameters.Region = "MN";
+var request = new VenueSearchRequest(apiKey);
+request.Locality = "Minneapolis";
+request.Region = "MN";
 parameters.HasMenu = true;
 ```
 
-Finally, create an instance of the VenueSearchClient class and call the SendAsync method with your parameters.
+Finally, create an instance of the VenueSearchClient class and call the SendAsync method with your request object.
 
 ```csharp
 var search = new VenueSearchClient();
-var result = await search.SendAsync(parameters);
+var result = await search.SendAsync(request);
 ```
 
 ![Powered by Locu](/Images/Locu/poweredby-color.png)
