@@ -20,6 +20,24 @@ namespace Locu.VenuDetails
         /// </remarks>
         [JsonProperty(PropertyName = "meta")]
         public VenueDetailsResponseMetadata Metadata { get; set; }
+
+        /// <summary>
+        /// List of Locu ID's that could not be found
+        /// </summary>
+        [JsonProperty(PropertyName = "not_found")]
+        public List<string> NotFound { get; set; }
+
+        /// <summary>
+        /// Venue details returned
+        /// </summary>
+        [JsonProperty(PropertyName = "objects")]
+        public List<VenueDetailResponseObject> Venues { get; set; }
+
+        /// <summary>
+        /// Raw json response from the search
+        /// </summary>
+        [JsonIgnore]
+        public string Json { get; set; }
     }
 
     /// <summary>
