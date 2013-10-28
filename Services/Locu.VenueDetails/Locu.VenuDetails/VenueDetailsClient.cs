@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locu.VenuDetails
+namespace Locu.VenueDetails
 {
     /// <summary>
     /// Represents a client that can consume the Locu Venue Details API.

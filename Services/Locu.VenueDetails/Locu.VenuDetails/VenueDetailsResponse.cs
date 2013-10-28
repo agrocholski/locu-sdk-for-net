@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locu.VenuDetails
+namespace Locu.VenueDetails
 {
     /// <summary>
     /// Represents a response from the Locu Venue Details API.

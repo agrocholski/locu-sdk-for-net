@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locu.VenuDetails
+namespace Locu.VenueDetails
 {
     public class VenueDetailsRequest
     {

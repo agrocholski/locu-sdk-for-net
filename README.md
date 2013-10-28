@@ -27,9 +27,14 @@ To get the binaries associated with this project you can also have them installe
 PM> Install-Package Locu.VenueSearch
 ```
 
+#### Venu Details binaries
+```bash
+PM> Install-Package Locu.VenueDetails
+```
+
 ## Code Samples
 
-### Searching for a Venue
+### Searching for a venue
 
 First, include the classes you need.
 
@@ -37,7 +42,7 @@ First, include the classes you need.
 using Locu.VenuSearch;
 ```
 
-Next, define the parameters of your search using a VenueSearchObject. The following example shows how to search for venues with menus in Minneapolis, MN.
+Next, define the parameters of your search using a VenueSearchRequest object. The following example shows how to search for venues with menus in Minneapolis, MN.
 
 ```csharp
 var request = new VenueSearchRequest(apiKey);
@@ -51,6 +56,27 @@ Finally, create an instance of the VenueSearchClient class and call the SendAsyn
 ```csharp
 var client = new VenueSearchClient();
 var result = await client.SendAsync(request);
+```
+
+### Getting venue details
+
+First, include classes you need.
+
+```csharp
+using Locu.VenueDetails;
+```
+
+Next, create a VenueDetailsRequest object using your API key and the Locu venue ID of the venue you want to retrieve details for.
+
+```csharp
+var request = new VenueDetailsRequest(apiKey, venueId);
+```
+
+Last, create an instance of the VenueDetailsClient class and call the SendAsync method with your request object.
+
+```csharp
+var client = new VenueDetailsClient();
+var response = await client.SendAsync(request);
 ```
 
 ![Powered by Locu](/Images/Locu/poweredby-color.png)
