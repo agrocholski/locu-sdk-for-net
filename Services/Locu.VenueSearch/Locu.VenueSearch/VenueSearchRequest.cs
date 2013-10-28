@@ -25,6 +25,7 @@ namespace Locu.VenueSearch
             this.Cuisines = new List<string>();
             this.HasMenu = null;
             this.Radius = null;
+            this.Location = new VenueSearchLocation();
         }
 
         /// <summary>
@@ -118,12 +119,21 @@ namespace Locu.VenueSearch
         /// <summary>
         /// Radius (in meters) to search within. This parameter
         /// can only be used together with location, it will be
-        /// ignored otherwise. It is 5000 m by default.
+        /// ignored otherwise. It is 50000 meters  by default.
         /// </summary>
         /// <remarks>
         /// Maps to the radius parameter.
         /// </remarks>
         public float? Radius { get; set; }
+
+        /// <summary>
+        /// Latitude and longitude of the location to search around.
+        /// By default the search is within a 50000 meter radius.
+        /// </summary>
+        /// <remarks>
+        /// Maps to the location parameter.
+        /// </remarks>
+        public VenueSearchLocation Location { get; set; }
 
         /// <summary>
         /// URI of the venue search request.
@@ -174,6 +184,9 @@ namespace Locu.VenueSearch
             if (this.Radius.HasValue)
                 uri.Append(string.Format("&radius={0}", this.Radius.Value.ToString()));
             
+            if(this.Location != null && this.Location.Latitude.HasValue && this.Location.Longitude.HasValue)
+                uri.Append(string.Format("&location={0},{1}", this.Location.Latitude.Value, this.Location.Longitude.Value));
+
             return uri.ToString();
         }
 
@@ -291,5 +304,21 @@ namespace Locu.VenueSearch
         /// Maps to "other" category.
         /// </summary>
         Other
+    }
+
+    /// <summary>
+    /// Represents a location used in the Locu Venue Search API.
+    /// </summary>
+    public class VenueSearchLocation
+    {
+        /// <summary>
+        /// Latitude to search.
+        /// </summary>
+        public float? Latitude { get; set; }
+
+        /// <summary>
+        /// Longitude to search.
+        /// </summary>
+        public float? Longitude { get; set; }
     }
 }
