@@ -32,6 +32,15 @@ PM> Install-Package Locu.VenueSearch
 PM> Install-Package Locu.VenueDetails
 ```
 
+## Dependencies
+
+The current version of the Locu SDK for .NET has the following dependencies:
+
+- [Microsoft.Net.Http](https://www.nuget.org/packages/Microsoft.Net.Http/)
+- [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/)
+
+These dependencies can be downloaded directly or referenced by your project through NuGet.
+
 ## Code Samples
 
 ### Searching for a venue
