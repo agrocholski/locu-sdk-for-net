@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Locu.VenuDetails")]
+[assembly: AssemblyTitle("Locu.VenueDetails")]
 [assembly: AssemblyDescription("A portable class library to access the venue details functionality of the Locu API")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adam Grocholski")]
-[assembly: AssemblyProduct("Locu.VenuDetails")]
+[assembly: AssemblyProduct("Locu.VenueDetails")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
