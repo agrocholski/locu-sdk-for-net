@@ -24,6 +24,7 @@ namespace Locu.VenueSearch
             this.Categories = new List<VenueCategory>();
             this.Cuisines = new List<string>();
             this.HasMenu = null;
+            this.Radius = null;
         }
 
         /// <summary>
@@ -113,8 +114,16 @@ namespace Locu.VenueSearch
 
         //todo: OpenAt
         //todo: Location
-        //todo: Radius
-        //todo: Bounds
+
+        /// <summary>
+        /// Radius (in meters) to search within. This parameter
+        /// can only be used together with location, it will be
+        /// ignored otherwise. It is 5000 m by default.
+        /// </summary>
+        /// <remarks>
+        /// Maps to the radius parameter.
+        /// </remarks>
+        public float? Radius { get; set; }
 
         /// <summary>
         /// URI of the venue search request.
@@ -162,6 +171,9 @@ namespace Locu.VenueSearch
             if (!string.IsNullOrEmpty(cuisines))
                 uri.Append(string.Format("&cuisine={0}", cuisines));
 
+            if (this.Radius.HasValue)
+                uri.Append(string.Format("&radius={0}", this.Radius.Value.ToString()));
+            
             return uri.ToString();
         }
 
