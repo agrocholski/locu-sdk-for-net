@@ -96,9 +96,9 @@ The source code also contains the Locu Venue Details Console. This tool allows y
 
 The call to the tool will look like this:
 
-- _apiKey_: Your Locu API key
-- _venueId_: The Locu Id of the venue you want save the details of
-- _filePath_: The path to the file where you want to save the venue details
+- __apiKey__: Your Locu API key
+- __venueId__: The Locu Id of the venue you want save the details of
+- __filePath__: The path to the file where you want to save the venue details
 
 ```bash
 VenueDetails apiKey venueId filePath
