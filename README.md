@@ -49,8 +49,8 @@ parameters.HasMenu = true;
 Finally, create an instance of the VenueSearchClient class and call the SendAsync method with your request object.
 
 ```csharp
-var search = new VenueSearchClient();
-var result = await search.SendAsync(request);
+var client = new VenueSearchClient();
+var result = await client.SendAsync(request);
 ```
 
 ![Powered by Locu](/Images/Locu/poweredby-color.png)
