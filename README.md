@@ -15,7 +15,7 @@ To get the source code of the Locu SDK for .NET via git just type:
 
 ```bash
 git clone https://github.com/agrocholski/locu-sdk-for-net
-cd azure-sdk-for-net
+cd locu-sdk-for-net
 ```
 
 ### Via NuGet
