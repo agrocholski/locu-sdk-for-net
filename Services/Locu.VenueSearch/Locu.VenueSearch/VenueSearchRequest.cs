@@ -26,6 +26,7 @@ namespace Locu.VenueSearch
             this.HasMenu = null;
             this.Radius = null;
             this.Location = new VenueSearchLocation();
+            this.Bounds = new VenueSearchBounds();
         }
 
         /// <summary>
@@ -113,9 +114,6 @@ namespace Locu.VenueSearch
         /// </remarks>
         public string Country { get; set; }
 
-        //todo: OpenAt
-        //todo: Location
-
         /// <summary>
         /// Radius (in meters) to search within. This parameter
         /// can only be used together with location, it will be
@@ -134,6 +132,16 @@ namespace Locu.VenueSearch
         /// Maps to the location parameter.
         /// </remarks>
         public VenueSearchLocation Location { get; set; }
+
+        /// <summary>
+        /// Corners of a bounding box to search within.
+        /// </summary>
+        /// <remarks>
+        /// Maps to the bounds parameter.
+        /// </remarks>
+        public VenueSearchBounds Bounds { get; set; }
+
+        //todo: openat
 
         /// <summary>
         /// URI of the venue search request.
@@ -186,6 +194,16 @@ namespace Locu.VenueSearch
             
             if(this.Location != null && this.Location.Latitude.HasValue && this.Location.Longitude.HasValue)
                 uri.Append(string.Format("&location={0},{1}", this.Location.Latitude.Value, this.Location.Longitude.Value));
+
+            if(this.Bounds != null && this.Bounds.Location1 != null && this.Bounds.Location2 != null
+                && this.Bounds.Location1.Latitude.HasValue && this.Bounds.Location1.Longitude.HasValue
+                && this.Bounds.Location2.Latitude.HasValue && this.Bounds.Location2.Longitude.HasValue)
+            {
+                uri.Append(string.Format("&bounds={0},{1}|{2},{3}", this.Bounds.Location1.Latitude.Value,
+                    this.Bounds.Location1.Longitude.Value,
+                    this.Bounds.Location2.Latitude.Value,
+                    this.Bounds.Location2.Longitude.Value));
+            }
 
             return uri.ToString();
         }
@@ -320,5 +338,30 @@ namespace Locu.VenueSearch
         /// Longitude to search.
         /// </summary>
         public float? Longitude { get; set; }
+    }
+
+    /// <summary>
+    /// Represents the corners of a bounding box to search within.
+    /// </summary>
+    public class VenueSearchBounds
+    {
+        /// <summary>
+        /// Initializes a new instances of the VenueSearchBounds class.
+        /// </summary>
+        public VenueSearchBounds()
+        {
+            this.Location1 = new VenueSearchLocation();
+            this.Location2 = new VenueSearchLocation();
+        }
+
+        /// <summary>
+        /// First corner of bounding box to search within.
+        /// </summary>
+        public VenueSearchLocation Location1 { get; set; }
+
+        /// <summary>
+        /// Second corner of bounding box to search within.
+        /// </summary>
+        public VenueSearchLocation Location2 { get; set; }
     }
 }
