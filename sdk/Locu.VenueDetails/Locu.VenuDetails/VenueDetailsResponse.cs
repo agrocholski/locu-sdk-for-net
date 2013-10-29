@@ -46,7 +46,9 @@ namespace Locu.VenueDetails
         /// <returns></returns>
         public static VenueDetailsResponse CreateFromString(string source)
         {
-            return JsonConvert.DeserializeObject<VenueDetailsResponse>(source);
+            var result = JsonConvert.DeserializeObject<VenueDetailsResponse>(source);
+            result.Json = source;
+            return result;
         }
     }
 
