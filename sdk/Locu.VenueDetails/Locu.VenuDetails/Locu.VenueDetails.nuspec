@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/agrocholski/locu-sdk-for-net/tree/master/Services/Locu.VenueDetails</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Added CreateFromString support to the VenueDetailsResponse class.</releaseNotes>
+    <releaseNotes>Updated CreateFromString property to include source json.</releaseNotes>
     <copyright>Copyright 2013</copyright>
     <tags>locu pcl</tags>
   </metadata>

@@ -35,9 +35,9 @@
     <StartupObject>Locu.VenueDetails.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Locu.VenueDetails, Version=1.0.5049.25065, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Locu.VenueDetails, Version=1.0.5050.16637, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Locu.VenueDetails.1.0.5049.25065\lib\portable-net45+wp80+win\Locu.VenueDetails.dll</HintPath>
+      <HintPath>..\packages\Locu.VenueDetails.1.0.5050.16637\lib\portable-net45+wp80+win\Locu.VenueDetails.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
