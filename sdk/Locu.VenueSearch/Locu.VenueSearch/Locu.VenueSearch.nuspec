@@ -6,11 +6,11 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <projectUrl>https://github.com/agrocholski/locu-sdk-for-net/tree/master/Services/Locu.VenueSearch</projectUrl>
+    <projectUrl>https://github.com/agrocholski/locu-sdk-for-net/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initail release.</releaseNotes>
+    <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2013</copyright>
-    <tags>locu</tags>
+    <tags>locu windows windows-phone pcl/tags>
   </metadata>
 </package>
