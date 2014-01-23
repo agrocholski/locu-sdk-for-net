@@ -168,6 +168,7 @@
     <Content Include="Assets\Tiles\TileImage-Medium.png" />
     <Content Include="Assets\Tiles\TileImage-Small.png" />
     <Content Include="SplashScreenImage.jpg" />
+    <Content Include="VoiceCommands.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Locu.VenueDetails">
