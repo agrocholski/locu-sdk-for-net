@@ -19,6 +19,7 @@ namespace Locu.VenueDetails
                 string apiKey = "";
                 string venueId = "";
                 string outputPath = "";
+                List<string> venueIds = new List<string>();
 
                 if (args.Length == 3)
                 {
@@ -26,6 +27,11 @@ namespace Locu.VenueDetails
 
                     apiKey = args[0];
                     Console.WriteLine("API Key: {0}", apiKey);
+
+                    if(args[1].Contains(","))
+                       venueIds = args[1].Split(new char[] { ',' }).ToList();
+                    else
+                        venueIds.Add(args[1]);
 
                     venueId = args[1];
                     Console.WriteLine("Venue Id: {0}", venueId);
@@ -47,7 +53,7 @@ namespace Locu.VenueDetails
                     outputPath = Console.ReadLine();
                 }
 
-                GetData(apiKey, venueId, outputPath);
+                GetData(apiKey, venueIds, outputPath);
             }
             catch(Exception ex)
             {
@@ -68,25 +74,30 @@ namespace Locu.VenueDetails
             Console.ReadLine();
         }
 
-        private static async void GetData(string apiKey, string venueId, string outputPath)
+        private static async void GetData(string apiKey, List<string> venueIds, string outputPath)
         {
             Console.WriteLine("Creating request...");
-            var request = new VenueDetailsRequest(apiKey, venueId);
+            var request = new VenueDetailsRequest(apiKey, venueIds);
 
             Console.WriteLine("Creating client...");
             var client = new VenueDetailsClient();
 
             Console.WriteLine("Sending request...");
-            var response = await client.SendAsync(request);
+            var venues = await client.SendAsync(request);
             Console.WriteLine("Response recevied...");
 
             Console.WriteLine("Creating file...");
             if (File.Exists(outputPath))
                 File.Delete(outputPath);
 
+            StringBuilder json = new StringBuilder();
+
+            foreach(var venue in venues)
+                json.Append(venue.Json);
+
             using(StreamWriter file = new StreamWriter(@outputPath))
             {
-                file.Write(response.Json);
+                file.Write(json.ToString());
                 Console.WriteLine("File created...");
             }
 
