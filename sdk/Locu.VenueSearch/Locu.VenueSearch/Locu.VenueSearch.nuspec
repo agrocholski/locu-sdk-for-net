@@ -11,6 +11,6 @@
     <description>$description$</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2013</copyright>
-    <tags>locu windows windows-phone pcl/tags>
+    <tags>locu windows windows-phone pcl</tags>
   </metadata>
 </package>
