@@ -93,6 +93,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\Converters.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -103,6 +104,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\AppSettings.cs" />
+    <Compile Include="Resources\DaysOfWeek.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DaysOfWeek.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Keys.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\OpenHoursViewModel.cs" />
+    <Compile Include="ViewModels\VenueViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -110,6 +122,18 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,12 +171,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DaysOfWeek.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DaysOfWeek.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Converters\" />
-    <Folder Include="Data\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Reference Include="Locu.VenueDetails">
       <HintPath>..\packages\Locu.VenueDetails.1.0.5136.24991\lib\portable-net45+wp80+win\Locu.VenueDetails.dll</HintPath>

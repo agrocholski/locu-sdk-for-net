@@ -7,11 +7,19 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using SingleVenue.Resources;
+using SingleVenue.ViewModels;
+using Locu.VenueDetails;
 
 namespace SingleVenue
 {
     public partial class App : Application
     {
+        public static VenueViewModel MainViewModel { get; set; }
+
+        public static Menu CurrentMenu { get; set; }
+
+        public static NavigationService NavigationService { get; set; }
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
