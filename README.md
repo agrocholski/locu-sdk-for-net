@@ -27,7 +27,7 @@ To get the binaries associated with this project you can also have them installe
 PM> Install-Package Locu.VenueSearch
 ```
 
-#### Venu Details binaries
+#### Venue Details binaries
 ```bash
 PM> Install-Package Locu.VenueDetails
 ```
@@ -48,7 +48,7 @@ These dependencies can be downloaded directly or referenced by your project thro
 First, include the classes you need.
 
 ```csharp
-using Locu.VenuSearch;
+using Locu.VenueSearch;
 ```
 
 Next, define the parameters of your search using a VenueSearchRequest object. The following example shows how to search for venues with menus in Minneapolis, MN.
