@@ -287,7 +287,7 @@ namespace SingleVenue.ViewModels
 
         private async static Task<VenueDetailsResponse> GetDataFromWeb()
         {
-            var venueIds = new List<string>() { Keys.LocuVenuId };
+            var venueIds = new List<string>() { Keys.LocuVenueId };
             var request = new VenueDetailsRequest(Keys.LocuApiKey, venueIds);
             var client = new VenueDetailsClient();
             var response = await client.SendAsync(request);
