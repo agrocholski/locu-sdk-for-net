@@ -18,28 +18,35 @@ namespace Locu.VenueDetails
         /// </summary>
         /// <param name="request">The VenueDetailsRequest to send asynchronously.</param>
         /// <returns></returns>
-        public async Task<VenueDetailsResponse> SendAsync(VenueDetailsRequest request)
+        public async Task<List<VenueDetailsResponse>> SendAsync(VenueDetailsRequest request)
         {
             if (string.IsNullOrEmpty(request.ApiKey))
                 throw new ArgumentNullException("API Key not provided.");
 
-            if (string.IsNullOrEmpty(request.VenueId))
+            if (request.VenueIds == null || request.VenueIds.Count == 0)
                 throw new ArgumentNullException("Venue Id not provided.");
 
-            var handler = new HttpClientHandler();
-            var client = new HttpClient(handler);
+            var details = new List<VenueDetailsResponse>();
 
-            var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, request.Uri);
+            foreach(var uri in request.Uris)
+            {
+                var handler = new HttpClientHandler();
+                var client = new HttpClient(handler);
 
-            var httpResponseMessage = await client.SendAsync(httpRequestMessage);
+                var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
 
-            var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
+                var httpResponseMessage = await client.SendAsync(httpRequestMessage);
 
-            var response = JsonConvert.DeserializeObject<VenueDetailsResponse>(httpContent);
+                var httpContent = await httpResponseMessage.Content.ReadAsStringAsync();
 
-            response.Json = httpContent;
+                var response = JsonConvert.DeserializeObject<VenueDetailsResponse>(httpContent);
 
-            return response;
+                response.Json = httpContent;
+
+                details.Add(response);
+            }
+
+            return details;
         }
     }
 }

@@ -13,17 +13,17 @@ namespace Locu.VenueDetails
         /// with an API key and Venue ID.
         /// </summary>
         /// <param name="apiKey">The API key.</param>
-        /// <param name="venueId">The ID of the venue.</param>
-        public VenueDetailsRequest(string apiKey, string venueId)
+        /// <param name="venueIds">The IDs of the venues.</param>
+        public VenueDetailsRequest(string apiKey, List<string> venueIds)
         {
             if (string.IsNullOrEmpty(apiKey))
                 throw new ArgumentNullException("apiKey", "An API key must be provided.");
 
-            if (string.IsNullOrEmpty(venueId))
-                throw new ArgumentNullException("venueId", "A Venue ID must be provided.");
+            if (venueIds == null || venueIds.Count == 0)
+                throw new ArgumentNullException("venueIds", "At least one Venue ID must be provided.");
 
             this.ApiKey = apiKey;
-            this.VenueId = venueId;
+            this.VenueIds = venueIds;
         }
 
         /// <summary>
@@ -35,27 +35,32 @@ namespace Locu.VenueDetails
         public string ApiKey { get; set; }
 
         /// <summary>
-        /// The Locu ID of then venu
+        /// The Locu IDs of then venue
         /// </summary>
-        public string VenueId { get; set; }
+        public List<string> VenueIds { get; set; }
 
         /// <summary>
-        /// URI of the venue detail request
+        /// URIs of the venue detail request
         /// </summary>
-        public string Uri
+        public List<string> Uris
         {
-            get { return GetUri(); }
+            get { return GetUris(); }
         }
 
-        private string GetUri()
+        private List<string> GetUris()
         {
             if (string.IsNullOrEmpty(this.ApiKey))
                 throw new ArgumentNullException("apiKey", "An API key must be provided.");
 
-            if (string.IsNullOrEmpty(this.VenueId))
-                throw new ArgumentNullException("venueId", "A Venue ID must be provided.");
+            if (this.VenueIds == null || this.VenueIds.Count == 0)
+                throw new ArgumentNullException("venueIds", "At least one Venue ID must be provided.");
 
-            return string.Format("http://api.locu.com/v1_0/venue/{0}/?api_key={1}", this.VenueId, this.ApiKey);
+            var result = new List<string>();
+
+            foreach (var venueId in this.VenueIds)
+                result.Add(string.Format("http://api.locu.com/v1_0/venue/{0}/?api_key={1}", venueId, this.ApiKey));
+
+            return result;
         }
     }
 }
