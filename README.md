@@ -75,10 +75,13 @@ First, include classes you need.
 using Locu.VenueDetails;
 ```
 
-Next, create a VenueDetailsRequest object using your API key and the Locu venue ID of the venue you want to retrieve details for.
+Next, create a VenueDetailsRequest object using your API key and the Locu venue IDs of the venues you want to retrieve details for.
 
 ```csharp
-var request = new VenueDetailsRequest(apiKey, venueId);
+var venueIds = new List<string>();
+venueIds.Add("id1");
+venueIds.Add("id2");
+var request = new VenueDetailsRequest(apiKey, venueIds);
 ```
 
 Last, create an instance of the VenueDetailsClient class and call the SendAsync method with your request object.
@@ -97,11 +100,11 @@ The source code also contains the Locu Venue Details Console. This tool allows y
 The call to the tool will look like this:
 
 - __apiKey__: Your Locu API key
-- __venueId__: The Locu Id of the venue you want save the details of
+- __venueIds__: A comma delimited list of the Locu Ids of the venues you want save the details of
 - __filePath__: The path to the file where you want to save the venue details
 
 ```bash
-VenueDetails apiKey venueId filePath
+VenueDetails apiKey venueIds filePath
 ```
 
 If you do not provide all three parameters, the tool will prompt you for them.
