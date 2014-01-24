@@ -1,4 +1,4 @@
-Single Venue Sample App for Windows Phone 8
+Single Venue App for Windows Phone 8
 ================
 
 The single venue sample app for Windows Phone 8 shows you how to use the Locu SDK for .NET to display information for a single venue.
