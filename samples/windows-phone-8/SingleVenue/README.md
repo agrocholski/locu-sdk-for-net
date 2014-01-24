@@ -23,6 +23,10 @@ To use the app you must make following updates to the __Keys.cs__ file in the __
 
 ## Customizing
 
+You can change the __Display Name__ of the application by modifying the __WMAppManifest.xml__ file located in the __Properties__ directory.
+
+To change the title displayed within the application, modify the __AppNameLower__ and __AppNameUpper__ properties in the __AppResources.resx__ file in the __Resources__ directory.
+
 There are a number of ways you can easily customize the look and feel of your app using the __Styles.xaml__ file in the __Resources__ directory.
 
 1.	To change the color of text  within the app, change the value of the __Color__ attribute of the __foreGroundBrush__ resources.

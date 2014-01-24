@@ -133,7 +133,7 @@ namespace SingleVenue.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to restaurant alma.
+        ///   Looks up a localized string similar to venue.
         /// </summary>
         public static string AppNameLower {
             get {
@@ -142,7 +142,7 @@ namespace SingleVenue.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RESTAURANT ALMA.
+        ///   Looks up a localized string similar to VENUE.
         /// </summary>
         public static string AppNameUpper {
             get {

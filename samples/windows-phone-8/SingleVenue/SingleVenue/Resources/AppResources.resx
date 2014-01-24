@@ -150,10 +150,10 @@
     <value>MY APPLICATION</value>
   </data>
   <data name="AppNameLower" xml:space="preserve">
-    <value>restaurant alma</value>
+    <value>venue</value>
   </data>
   <data name="AppNameUpper" xml:space="preserve">
-    <value>RESTAURANT ALMA</value>
+    <value>VENUE</value>
   </data>
   <data name="DiningAt" xml:space="preserve">
     <value>Dining at</value>
