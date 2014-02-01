@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="SingleVenue..7e16deb1-c3a8-4011-9d10-6bce0d801459" Version="1.0" Language="en-US" Publisher="adam grocholski" />
+    <DisplayName>Locu Single Venue App</DisplayName>
+    <Description xml:space="preserve">Creates a Locu single venue app for Windows Phone.</Description>
+    <MoreInfo>https://github.com/agrocholski/locu-sdk-for-net/tree/</MoreInfo>
+    <GettingStartedGuide>https://github.com/agrocholski/locu-sdk-for-net/tree/master/samples/windows-phone-8/SingleVenue</GettingStartedGuide>
+    <ReleaseNotes>https://github.com/agrocholski/locu-sdk-for-net/tree/master/vs-templates/windows-phone-8/SingleVenue</ReleaseNotes>
+    <Icon>AppIcon.png</Icon>
+    <PreviewImage>AppIcon.png</PreviewImage>
+    <Tags>locu, windows phone</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" d:TargetPath="ProjectTemplates\CSharp\Windows Phone\SingleVenue.zip" />
+  </Assets>
+</PackageManifest>
