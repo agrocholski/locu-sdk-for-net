@@ -7,11 +7,20 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MultiVenue.Resources;
+using MultiVenue.ViewModels;
 
 namespace MultiVenue
 {
     public partial class App : Application
     {
+        public static VenueListViewModel MainViewModel { get; set; }
+
+        public static VenueViewModel CurrentVenue { get; set; }
+
+        public static Menu CurrentMenu { get; set; }
+
+        public static NavigationService NavigationService { get; set; }
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
