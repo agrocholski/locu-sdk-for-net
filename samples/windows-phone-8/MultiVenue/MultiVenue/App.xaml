@@ -7,7 +7,18 @@
 
     <!--Application Resources-->
     <Application.Resources>
-        <local:LocalizedStrings xmlns:local="clr-namespace:MultiVenue" x:Key="LocalizedStrings"/>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <local:LocalizedStrings xmlns:local="clr-namespace:MultiVenue" x:Key="LocalizedStrings"/>
+                </ResourceDictionary>
+                <ResourceDictionary Source="Resources/Converters.xaml" />
+                <ResourceDictionary Source="Resources/DataTemplates.xaml" />
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
