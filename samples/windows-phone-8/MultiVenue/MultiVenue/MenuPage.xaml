@@ -14,21 +14,35 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource pageBackgroundBrush}">
+        <Grid Background="{StaticResource panoramaBackgroundBrush}">
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <!--TitlePanel contains the name of the application and page title-->
+            <StackPanel Grid.Row="0" Margin="12,17,0,28">
+                <TextBlock Text="{Binding Path=LocalizedResources.AppNameUpper, Source={StaticResource LocalizedStrings}}" 
+                           Style="{StaticResource PhoneTextNormalStyle}" 
+                           Foreground="{StaticResource foregroundBrush}"/>
+                <TextBlock Text="{Binding Path=Name}" Margin="9,-7,0,0" 
+                           Style="{StaticResource PhoneTextTitle1Style}" 
+                           Foreground="{StaticResource foregroundBrush}"/>
+            </StackPanel>
 
+            <!--ContentPanel - place additional content here-->
+            <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+
+                <ListBox x:Name="menuListBox" 
+                         ItemsSource="{Binding Path=Sections}" 
+                         ItemTemplate="{StaticResource menuSectionDataTemplate}"
+                         Height="600">
+
+                </ListBox>
+
+            </ScrollViewer>
         </Grid>
     </Grid>
 
