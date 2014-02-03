@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-US">
+    <CommandPrefix>Venue</CommandPrefix>
+    <Example> call </Example>
+
+    <Command Name="callVenue">
+      <Example> call </Example>
+      <ListenFor> [and] call </ListenFor>
+      <Feedback> Calling venue... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+    <Command Name="getDirections">
+      <Example> get directions </Example>
+      <ListenFor> [and] get directions </ListenFor>
+      <Feedback> Getting directions for venue... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+    <Command Name="shareVenue">
+      <Example> share </Example>
+      <ListenFor> [and] share </ListenFor>
+      <Feedback> Sharing venue... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+    <Command Name="addToCalendar">
+      <Example> add to calendar </Example>
+      <ListenFor> [and] add to calendar </ListenFor>
+      <Feedback> Adding venue to calendar... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+    <Command Name="getHours">
+      <Example> get hours </Example>
+      <ListenFor> [and] get hours </ListenFor>
+      <Feedback> Getting hours for venue... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+    <Command Name="viewMenu">
+      <Example> view menu </Example>
+      <ListenFor> [and] view menu </ListenFor>
+      <Feedback> Viewing menu for venue... </Feedback>
+      <Navigate Target="HomePage.xaml" />
+    </Command>
+
+  </CommandSet>
+</VoiceCommands>
