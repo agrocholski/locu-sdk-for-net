@@ -37,6 +37,26 @@
 
     </DataTemplate>
 
+    <DataTemplate x:Key="venueListItemDataTemplate">
+        <Grid Background="Black" Margin="12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Tap">
+                    <i:InvokeCommandAction Command="{Binding ViewVenue}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <Image Source="/Assets/Images/chef.png" Grid.Column="0" />
+            <TextBlock Text="{Binding Name}"
+                       Style="{StaticResource venueListItemStyle}"
+                       Grid.Column="1" />
+        </Grid>
+    </DataTemplate>
+    
     <DataTemplate x:Key="menuListItemDataTemplate">
         <Grid Background="Black" 
 			Margin="12" 
